@@ -14,8 +14,22 @@
 			radius: {
 				type: Number,
 				default: 100
-			}
-		}
+			},
+      percent: {
+        type: Number,
+        default: 0
+      }
+		},
+    data() {
+      return {
+        dashArray: Math.PI * 100
+      }
+    },
+    computed: {
+      dashOffset() {
+        return (1 - this.percent) * this.dashArray
+      }
+    }
 	}
 </script>
 <style scoped lang="stylus" rel="stylesheet/stylus">
